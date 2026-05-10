@@ -1,0 +1,36 @@
+.button {
+  margin: 15px;
+  height: 50px;
+  width: 130px;
+
+  border: none;
+  border-radius: 5px;
+  background-color: red;
+  cursor: pointer;
+
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  font-family: inherit;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.15),
+    0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+.button--anton {
+  font-family: var(--font-anton), ui-sans-serif, sans-serif;
+  font-weight: 400;
+}

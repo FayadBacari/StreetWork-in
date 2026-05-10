@@ -1,0 +1,81 @@
+@import "../components/ui/header.css";
+
+:root {
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  min-height: 100%;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+main {
+  margin: 0;
+}
+
+body {
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji";
+  background: #0a0f14;
+}
+
+.site-shell {
+  position: relative;
+  min-height: 100dvh;
+}
+
+/*
+  Éviter z-index négatif : avec isolation, la couche peut se retrouver sous le fond du body
+  et la vidéo devient invisible. 0 = fond, 1 = contenu pages.
+*/
+.site-media-root {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  /* Couvre le viewport sans 100vw (évite la barre de défilement + débordement) */
+  width: 100%;
+  height: 100%;
+  min-height: 100dvh;
+}
+
+.site-media-gradient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Voile léger : si la vidéo est noire au début, on voit quand même du mouvement dès que ça lit */
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(10, 18, 28, 0.18) 0%,
+    rgba(8, 12, 18, 0.35) 50%,
+    rgba(5, 7, 11, 0.45) 100%
+  );
+}
+
+.site-media-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  /* Visible dès l’affichage : ne pas dépendre du JS pour opacity (sinon 404 codec = invisible à vie) */
+  opacity: 1;
+  pointer-events: none;
+}
