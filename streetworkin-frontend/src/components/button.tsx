@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { Anton } from "next/font/google";
-import "./ui/button.css";
+import "./ui/button.scss";
 
 const anton = Anton({
   subsets: ["latin"],
@@ -21,9 +21,9 @@ export default function Button({
   ...rest
 }: ButtonProps) {
   const cn = [
-    "button",
+    "site-button",
     variant === "anton" && anton.variable,
-    variant === "anton" && "button--anton",
+    variant === "anton" && "site-button--anton",
     className,
   ]
     .filter(Boolean)

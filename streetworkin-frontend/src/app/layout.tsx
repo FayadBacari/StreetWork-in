@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SiteVideoBackground } from "@/components/site-video-background";
+import "@/components/ui/header.scss";
 import "./globals.css";
 
 export const metadata: Metadata = {
