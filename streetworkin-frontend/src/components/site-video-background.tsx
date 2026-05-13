@@ -10,11 +10,14 @@ export function SiteVideoBackground() {
       <video
         className="site-media-video"
         src={BACKGROUND_VIDEO_URL}
+        poster="/assets/streetworkout_tv_poster.jpg"
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
+        // @ts-expect-error — fetchPriority is valid HTML but not yet in React types
+        fetchPriority="low"
       />
       <div className="site-media-gradient" />
     </div>

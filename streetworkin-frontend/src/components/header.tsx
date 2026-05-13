@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Button from "@/components/button";
+import "./ui/header.scss";
 
 export default function Header() {
   return (
@@ -6,10 +8,13 @@ export default function Header() {
       <div className="site-header__wrapper">
         <div className="site-header__inner">
           <div className="site-header__logo">
-            <img
+            <Image
               src="/assets/logo.png"
               alt="StreetWork'in Logo"
               className="site-header__logo-img"
+              width={130}
+              height={130}
+              priority
             />
           </div>
           <div className="site-header__nav-2 site-header__nav--primary">

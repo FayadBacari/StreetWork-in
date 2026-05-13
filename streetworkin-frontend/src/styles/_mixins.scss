@@ -1,0 +1,23 @@
+@mixin button-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background: #000985;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 22%);
+  font-family: var(--font-anton), ui-sans-serif, sans-serif;
+  font-weight: 400;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 28%);
+  }
+}
