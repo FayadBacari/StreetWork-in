@@ -63,12 +63,31 @@ $shadow-card: 0 2px 8px rgb(0 0 0 / 8%);
       right: 0;
       bottom: 0;
       left: 0;
-
-      .site-button {
-        width: 150px;
-        margin: 10px;
-        margin-top: -80px;
-      }
     }
+  }
+}
+
+.site-home__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background: #000985;
+  box-shadow: $shadow-card;
+  font-family: var(--font-anton), ui-sans-serif, sans-serif;
+  font-weight: 400;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 28%);
   }
 }

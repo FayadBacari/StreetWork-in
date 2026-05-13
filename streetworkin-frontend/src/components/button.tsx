@@ -1,36 +1,28 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
-import { Anton } from "next/font/google";
-import "./ui/button.scss";
-
-const anton = Anton({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-anton",
-});
+import Link from "next/link";
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
-  variant?: "default" | "anton";
+  href?: string;
 };
 
 export default function Button({
   children,
   type = "button",
   className,
-  variant = "default",
+  href,
   ...rest
 }: ButtonProps) {
-  const cn = [
-    "site-button",
-    variant === "anton" && anton.variable,
-    variant === "anton" && "site-button--anton",
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  if (href) {
+    return (
+      <Link href={href} className={className}>
+        {children}
+      </Link>
+    );
+  }
 
   return (
-    <button type={type} className={cn} {...rest}>
+    <button type={type} className={className} {...rest}>
       {children}
     </button>
   );

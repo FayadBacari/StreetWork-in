@@ -1,6 +1,6 @@
 import "./page.scss";
-import Button from "@/components/button";
 import Header from "@/components/header";
+import SiteHomeActions from "@/components/site-home-actions";
 
 export default function Home() {
   return (
@@ -16,14 +16,7 @@ export default function Home() {
             />
           </div>
         </section>
-        <div className="site-content__actions site-content__actions--bottom">
-          <Button type="button" variant="anton">
-            Découvrir
-          </Button>
-          <Button type="button" variant="anton">
-            Rejoindre
-          </Button>
-        </div>
+        <SiteHomeActions />
       </div>
     </main>
   );
